@@ -12,8 +12,16 @@
     <div class="group-std">
       <form id="formMain">
         <div class="form-group">
-          <label for="currency">US dollar amount</label>
-          <input id="currency" class="form-control" type="text">
+          <label for="amount">US dollar amount</label>
+          <input id="amount" class="form-control" type="text">
+        </div>
+        <div class="form-group">
+          <label for="currency">Currency to convert to</label>
+          <select id="currency" class="form-control">
+            <option value="europe">Europe</option>
+            <option value="mexico">Mexico</option>
+            <option value="china">China</option>
+          </select>
         </div>
         <button type="submit" class="btn btn-primary">CONVERT</button>
       </form>
