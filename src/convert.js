@@ -1,6 +1,4 @@
-// Business Logic
-
-function convert(amount,currency) {
+export default function convert(amount,currency) {
   let convertedAmount;
   if (currency === "europe") {
     convertedAmount = amount * 2;
