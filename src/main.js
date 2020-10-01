@@ -14,18 +14,18 @@ function clearFields() {
 function getElements(response,amount,target) {
   if (response.result == "success") {
     const rate = response.conversion_rates[target];
-    if (rate) {
-      let convertedAmount = amount * rate;
-      convertedAmount = convertedAmount.toFixed(2);
+    if (!amount) {
       $('#results-group').show();
-      $('.showRate').text(`The converted amount from USD to ${target} is ${convertedAmount}.`);
+      $('.showRate').text('Please input a proper amount.');
+    } else if (!rate) {
+        $('#results-group').show();
+        $('.showRate').text(`${target} is not a supported currency code. Please input a new target currency.`);
     } else {
-      $('#results-group').show();
-      $('.showRate').text(`${target} is not a supported currency code. Please input a new target currency.`);
+        let convertedAmount = amount * rate;
+        convertedAmount = convertedAmount.toFixed(2);
+        $('#results-group').show();
+        $('.showRate').text(`The converted amount from USD to ${target} is ${convertedAmount}.`);
     }
-  } else {
-    $('results-group').show();
-    $('.showErrors').text(`There was an error: ${response}`);
   }
 }
 
