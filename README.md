@@ -8,13 +8,16 @@
 
 This application....
 
+## Setup & Installation Requirements
 
-## Setup/Installation Requirements
-
-* Find repository on GitHub or otherwise obtain repo link
-* Clone, fork, or otherwise download the project
-* Run the project through a local server, live server, directly in the browser, or any method of your choosing
-* The recommended editor for viewing the application is Visual Studio Code
+* Find repository on GitHub and clone/download the project
+* Navigate to the project directory through a terminal
+* Ensure that the package.json file is present in the root directory and that the latest version of <strong>npm</strong> is installed
+* Run <strong>npm install</strong> to install dependencies
+* Visit the ExchangeRate-API website to create an account and receive an API key
+* In the root directly, create a <strong>.env</strong> file
+* On the first line of you .env file, add <strong>API_KEY=</strong> and copy in your API key from the previous step, following this format: <strong>API_KEY=YourAPIKeyGoesHere</strong>
+* Use <strong>npm run start</strong> to build, run, and launch the application on a live server
 
 ## Specs
 
@@ -27,17 +30,6 @@ This application....
 * <strong>Spec: </strong>The....
     * <strong>Input: </strong>  
     * <strong>Output: </strong> 
-
-## Setup & Installation Requirements
-
-* Find repository on GitHub and clone/download the project
-* Navigate to the project directory through a terminal
-* Ensure that the package.json file is present in the root directory and that the latest version of <strong>npm</strong> is installed
-* Run <strong>npm install</strong> to install dependencies
-* Visit the ExchangeRate-API website to create an account and receive an API key
-* In the root directly, create a <strong>.env</strong> file
-* On the first line of you .env file, add <strong>API_KEY=</strong> and copy in your API key from the previous step, following this format: <strong>API_KEY=YourAPIKeyGoesHere</strong>
-* Use <strong>npm run start</strong> to build, run, and launch the application on a live server
 
 ## Known Bugs
 
