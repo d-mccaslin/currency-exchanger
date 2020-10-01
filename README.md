@@ -6,7 +6,7 @@
 
 ## Description
 
-This application....
+This application returns converted currency amount based on exchange rates from the ExchangeRate-API. Users can input an amount in US dollars as well as a 3-digit currency code and will be shown a converted amount. If the application encounters errors with the user inputs or API call they user will be shown an appropriate error message.
 
 ## Setup & Installation Requirements
 
@@ -21,15 +21,9 @@ This application....
 
 ## Specs
 
-* <strong>Spec: </strong>A user can...
-    * <strong>Input: </strong>  
-    * <strong>Output: </strong> 
-* <strong>Spec: </strong>The....
-    * <strong>Input: </strong>  
-    * <strong>Output: </strong> 
-* <strong>Spec: </strong>The....
-    * <strong>Input: </strong>  
-    * <strong>Output: </strong> 
+* <strong>Spec: </strong>A user can input a numeric amount and 3-digit currency code and receive a converted amount based on the inputted currency.
+    * <strong>Input: </strong>  100, GBP
+    * <strong>Output: </strong> "The converted amount from 100 USD to GBP is 77.76."
 
 ## Known Bugs
 
