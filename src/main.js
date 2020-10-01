@@ -11,11 +11,12 @@ function clearFields() {
   $('.showRate').text("");
 }
 
-function getElements(response) {
+function getElements(response,amount,target) {
   if (response.result == "success") {
-    const rate = response.conversion_rates['AED'];
+    const rate = response.conversion_rates[target];
+    const convertedAmount = amount * rate;
     $("#results-group").show();
-    $('.showRate').text(`The conversion rate for AED is ${rate}%`);
+    $('.showRate').text(`The converted amount from USD to ${target} is ${convertedAmount}`);
   } else {
     $("results-group").show();
     $('.showErrors').text(`There was an error: ${response}`);
@@ -24,12 +25,12 @@ function getElements(response) {
 
 async function makeApiCall(amount,target) {
   const response = await ExchangeService.getExchange(amount,target);
-  getElements(response);
+  getElements(response,amount,target);
 }
 
 $('#conversionForm').submit(function(event) {
   event.preventDefault();
-  let dollarAmount = $('#dollarAmount').val();
+  let dollarAmount = parseInt($('#dollarAmount').val());
   let targetCurrency = $('#targetCurrency').val();
   clearFields();
   makeApiCall(dollarAmount,targetCurrency);
