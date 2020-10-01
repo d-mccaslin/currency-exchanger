@@ -13,9 +13,15 @@ function clearFields() {
 }
 
 function getElements(response) {
-  if (response.main) {
-    $('.showHumidity').text(`The humidity in ${response.name} is ${response.main.humidity}%`);
-    $('.showTemp').text(`The temperature in Kelvins is ${response.main.temp} degrees.`);
+  if (response.result == "success") {
+    console.log(response);
+    console.log(response.conversion_rates[0]);
+    console.log(response.conversion_rates);
+
+    //const country = response.conversion_rates[0];
+    const rate = response.conversion_rates['AED'];
+    $('.showHumidity').text(`The conversion rate for AED is ${rate}%`);
+    //$('.showTemp').text(`The temperature in Kelvins is ${response.main.temp} degrees.`);
   } else {
     $('.showErrors').text(`There was an error: ${response}`);
   }
