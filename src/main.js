@@ -30,7 +30,7 @@ function getElements(response,amount,target) {
 }
 
 async function makeApiCall(amount,target) {
-  const response = await ExchangeService.getExchange(amount,target);
+  const response = await ExchangeService.getExchange();
   getElements(response,amount,target);
 }
 

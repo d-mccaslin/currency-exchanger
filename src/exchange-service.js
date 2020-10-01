@@ -1,13 +1,8 @@
 export default class ExchangeService {  
-  static async getExchange(amount,target) {
+  static async getExchange() {
     try {
       const key = process.env.API_KEY;
-      const amountParam = amount;
       const baseParam = 'USD';
-      const targetParam = target;
-      console.log(targetParam);
-      console.log(amountParam);
-
       const response = await fetch(`https://v6.exchangerate-api.com/v6/${key}/latest/${baseParam}`);
       if (!response.ok) {
         throw Error(response.statusText);
