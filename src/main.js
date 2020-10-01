@@ -1,21 +1,19 @@
-import $ from 'jquery'
-import 'bootstrap'
+import $ from 'jquery';
+import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import ExchangeService from './exchange-service.js'
+import ExchangeService from './exchange-service.js';
 
 function clearFields() {
-  $('#location').val("");
+  $('#dollarAmount').val("");
+  $('#targetCurrency').val("");
   $('.showErrors').text("");
-  $('.showHumidity').text("");
-  $('.showTemp').text("");
+  $('.showRate').text("");
 }
 
 function getElements(response) {
   if (response.result == "success") {
-
     const rate = response.conversion_rates['AED'];
-
     $("#results-group").show();
     $('.showRate').text(`The conversion rate for AED is ${rate}%`);
   } else {
