@@ -18,13 +18,13 @@ function getElements(response,amount,target) {
       $('#results-group').show();
       $('.showRate').text('Please input a proper amount.');
     } else if (!rate) {
-        $('#results-group').show();
-        $('.showRate').text(`${target} is not a supported currency code. Please input a new target currency.`);
+      $('#results-group').show();
+      $('.showRate').text(`${target} is not a supported currency code. Please input a new target currency.`);
     } else {
-        let convertedAmount = amount * rate;
-        convertedAmount = convertedAmount.toFixed(2);
-        $('#results-group').show();
-        $('.showRate').text(`The converted amount from USD to ${target} is ${convertedAmount}.`);
+      let convertedAmount = amount * rate;
+      convertedAmount = convertedAmount.toFixed(2);
+      $('#results-group').show();
+      $('.showRate').text(`The converted amount from ${amount} USD to ${target} is ${convertedAmount}.`);
     }
   }
 }
