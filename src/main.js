@@ -26,6 +26,8 @@ function getElements(response,amount,target) {
       $('#results-group').show();
       $('.showRate').text(`The converted amount from ${amount} USD to ${target} is ${convertedAmount}.`);
     }
+  } else {
+    $('.showErrors').text(`There was an error: ${response}`);
   }
 }
 
