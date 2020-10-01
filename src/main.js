@@ -1,9 +1,8 @@
-import convert from './convert.js';
 import $ from 'jquery'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
-import WeatherService from './currency-service.js'
+import ExchangeService from './exchange-service.js'
 
 function clearFields() {
   $('#location').val("");
@@ -25,26 +24,15 @@ function getElements(response) {
   }
 }
 
-async function makeApiCall(city) {
-  const response = await WeatherService.getWeather(city);
+async function makeApiCall(amount,target) {
+  const response = await ExchangeService.getExchange(amount,target);
   getElements(response);
 }
 
 $('#conversionForm').submit(function(event) {
   event.preventDefault();
-  let city = $('#location').val();
+  let dollarAmount = $('#dollarAmount').val();
+  let targetCurrency = $('#targetCurrency').val();
   clearFields();
-  makeApiCall(city);
+  makeApiCall(dollarAmount,targetCurrency);
 });
-
-$("#formMain").submit(function(event) {
-  event.preventDefault();
-  const amount = parseInt($("input#amount").val());
-  const currency = $("select#currency").val();
-  //console.log(amount);
-  const convertedAmount = convert(amount,currency);
-  console.log(convertedAmount);
-  $("#result").text(convertedAmount);
-  $("#results-group").show();
-})
-
