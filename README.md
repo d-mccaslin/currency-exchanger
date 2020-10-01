@@ -1,6 +1,6 @@
 # David McCaslin
 
-#### This application....
+#### This application allows users to input a US dollar amount and receive a currency conversion for a chosen country based on current/live exchange rates.
 
 #### By David McCaslin
 
@@ -28,9 +28,16 @@ This application....
     * <strong>Input: </strong>  
     * <strong>Output: </strong> 
 
-## Test
+## Setup & Installation Requirements
 
-* Please see <strong>Specs</strong> section above
+* Find repository on GitHub and clone/download the project
+* Navigate to the project directory through a terminal
+* Ensure that the package.json file is present in the root directory and that the latest version of <strong>npm</strong> is installed
+* Run <strong>npm install</strong> to install dependencies
+* Visit the ExchangeRate-API website to create an account and receive an API key
+* In the root directly, create a <strong>.env</strong> file
+* On the first line of you .env file, add <strong>API_KEY=</strong> and copy in your API key from the previous step, following this format: <strong>API_KEY=YourAPIKeyGoesHere</strong>
+* Use <strong>npm run start</strong> to build, run, and launch the application on a live server
 
 ## Known Bugs
 
@@ -43,8 +50,9 @@ Contact: davidmccaslin94@gmail.com
 ## Technologies Used
 
 * Languages: HTML, CSS, JavaScript
-* Libraries: Bootstrap, jQuery
+* Libraries: Bootstrap, jQuery, npm
 * Development Tools: Visual Studio Code, Git, GitHub
+* API: ExchangeRate-API
 
 ### License
 
